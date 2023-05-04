@@ -15,6 +15,9 @@ app.get("/posts", (req, res) => {
       <head>
         <title>Wizard News</title>
         <link rel="stylesheet" href="/style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Sigmar&display=swap" rel="stylesheet">
       </head>
       <body>
         <div class="news-list">
