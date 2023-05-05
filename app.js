@@ -1,13 +1,15 @@
 const express = require("express");
 const morgan = require('morgan');
 const path = require('path')
-const postBank = require("./postBank");
+const { find, list } = require("./postBank");
+
+// const postBank = require("./postBank");
 const app = express();
 
 app.use(morgan('dev'));
 
 app.get("/posts", (req, res) => {
-  const posts = postBank.list();
+  const posts = list();
   // res.send(posts.map(post => post.id))
   res.send(
     `<!DOCTYPE html>
@@ -42,7 +44,7 @@ app.get("/posts", (req, res) => {
 
 app.get('/posts/:id', (req, res) => {
   const id = req.params.id;
-  const post = postBank.find(id);
+  const post = find(id);
 
   if (!post.id) {
     throw new Error('Not Found')
