@@ -8,6 +8,10 @@ const app = express();
 
 app.use(morgan('dev'));
 
+app.get("/", (req,res) => {
+  res.redirect("/posts")
+})
+
 app.get("/posts", (req, res) => {
   const posts = list();
   // res.send(posts.map(post => post.id))
